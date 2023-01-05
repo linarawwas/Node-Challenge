@@ -34,6 +34,8 @@ function startApp(name){
  * @returns {void}
  */
 function onDataReceived(text) {
+const arr= text.replace(/\s+/g, ' ').trim().split(" ");
+if (arr.length==1){
   if (text === 'quit\n') {
     quit();
   }
@@ -49,6 +51,13 @@ help();
   else{
     unknownCommand(text);
   }
+}
+else if(arr[0]=="hello"){
+  console.log(arr[0]+" "+arr[1]+"!");
+}
+else{
+  unknownCommand(text);
+}
 }
 
 
