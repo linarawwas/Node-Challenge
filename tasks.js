@@ -45,6 +45,9 @@ if (arr.length==1){
   else if(text === 'hello\n'){
     hello();
   }
+  else if(text === 'list\n'){
+    list();
+  }
   else if(text === 'help\n'){
 help();
  }
@@ -60,6 +63,12 @@ else{
 }
 }
 
+function list(){
+var tasks=['read a book','hug your mama and baba','get nephews and nieces chocolate']
+for (let i=0; i<tasks.length ; i++){
+  console.log(i.toString()+". "+tasks[i])
+}
+}
 
 /**
  * prints "unknown command"
