@@ -52,7 +52,7 @@ if (arr.length==1){
     list();
   }
   else if(text === 'help\n'){
-help();
+    help();
  }
   else{
     unknownCommand(text);
@@ -65,15 +65,13 @@ else if(arr[0]=='add'){
   add();
 }
 else if(arr[0]=='remove'){
-if(arr[1]=='1'){
-  removeFirst();
-}
-else if (arr[1]=='2'){
-  removeSecond();
+  remove();
 }
 else if (arr[1]>newTasks.length){
   console.log('wrong number, nothing to remove')
 }
+else if(arr[0]=='edit'){
+edit();
 }
 else{
   unknownCommand(text);
@@ -90,7 +88,7 @@ function list(){
   }
 
 function add(){ 
-  var newTaskArray=[];
+newTaskArray=[];
   for (let i=1; i<arr.length ; i++){
 newTaskArray+=arr[i]+" "  ;
 }
@@ -100,17 +98,22 @@ console.log(newTasks)
 }
 
 function remove(){
-newTasks.pop()
-console.log('last element was removed', newTasks)
-}
-function removeFirst(){
+  if (arr[1]=='1'){
   newTasks.shift();
   console.log('first element was removed',newTasks);
-}
-function removeSecond(){
+  }else if (arr[1]=='2'){
   newTasks.splice(1,1)
   console.log('2nd element was removed', newTasks)
+  }else{
+    newTasks.pop()
+    console.log('last element was removed', newTasks)
+  }
 }
+
+// function removeFirst(){
+// }
+// function removeSecond(){
+// }
 
 
 
