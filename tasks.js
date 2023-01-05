@@ -134,7 +134,7 @@ function hello(){
 
 /* lists all possible commands */
 function help(){
-  console.log('these are the commands: exit/quit, hello, hello someone, help')
+  console.log('these are the commands: exit/quit, hello, hello someone, remove, remove 1, remove 2, help')
 }
 
 /**
