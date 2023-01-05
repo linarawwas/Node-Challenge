@@ -42,6 +42,9 @@ if (arr.length==1){
   else if(text === 'exit\n'){
     quit();
   }
+  else if(text === 'remove\n'){
+    remove();
+  }
   else if(text === 'hello\n'){
     hello();
   }
@@ -61,27 +64,50 @@ else if(arr[0]=="hello"){
 else if(arr[0]=='add'){
   add();
 }
+else if(arr[0]=='remove'){
+if(arr[1]=='1'){
+  removeFirst();
+}
+else if (arr[1]=='2'){
+  removeSecond();
+}
+}
 else{
   unknownCommand(text);
 }
 }
-
+/* this is the initial task list */
+var tasks =['read a book','hug your mama and baba','get nephews and nieces chocolate']
 
 /* lists the tasks i have in the tasks array */
 function list(){
- tasks =['read a book','hug your mama and baba','get nephews and nieces chocolate']
   for (let i=0; i<tasks.length ; i++){
     console.log((i+1).toString()+". "+tasks[i])
   }
   }
 
-function add(){
+function add(){ 
   var newTaskArray=[];
   for (let i=1; i<arr.length ; i++){
-newTaskArray+=arr[i]+" "  }
-  var newTasks= tasks.concat(newTaskArray)
+newTaskArray+=arr[i]+" "  ;
+}
+/* this is the array we will save added tasks to */
+newTasks= tasks.concat(newTaskArray)
+console.log(newTasks)
 }
 
+function remove(){
+newTasks.pop()
+console.log('last element was removed', newTasks)
+}
+function removeFirst(){
+  newTasks.shift();
+  console.log('first element was removed',newTasks);
+}
+function removeSecond(){
+  newTasks.splice(1,1)
+  console.log('2nd element was removed', newTasks)
+}
 
 
 
