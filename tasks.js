@@ -71,6 +71,9 @@ if(arr[1]=='1'){
 else if (arr[1]=='2'){
   removeSecond();
 }
+else if (arr[1]>newTasks.length){
+  console.log('wrong number, nothing to remove')
+}
 }
 else{
   unknownCommand(text);
