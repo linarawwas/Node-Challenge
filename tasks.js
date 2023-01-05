@@ -84,7 +84,7 @@ function hello(){
 
 /* lists all possible commands */
 function help(){
-  console.log('these are the commands: exit/quit, hello, help')
+  console.log('these are the commands: exit/quit, hello, hello someone, help')
 }
 
 /**
