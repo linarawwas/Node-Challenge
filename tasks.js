@@ -33,8 +33,8 @@ function startApp(name){
  * @param  {string} text data typed by the user
  * @returns {void}
  */
-function onDataReceived(text) {
-const arr= text.replace(/\s+/g, ' ').trim().split(" ");
+function onDataReceived(text) { 
+  arr= text.replace(/\s+/g, ' ').trim().split(" ");
 if (arr.length==1){
   if (text === 'quit\n') {
     quit();
@@ -58,17 +58,32 @@ help();
 else if(arr[0]=="hello"){
   console.log(arr[0]+" "+arr[1]+"!");
 }
+else if(arr[0]=='add'){
+  add();
+}
 else{
   unknownCommand(text);
 }
 }
 
+
+/* lists the tasks i have in the tasks array */
 function list(){
-var tasks=['read a book','hug your mama and baba','get nephews and nieces chocolate']
-for (let i=0; i<tasks.length ; i++){
-  console.log(i.toString()+". "+tasks[i])
+ tasks =['read a book','hug your mama and baba','get nephews and nieces chocolate']
+  for (let i=0; i<tasks.length ; i++){
+    console.log((i+1).toString()+". "+tasks[i])
+  }
+  }
+
+function add(){
+  var newTaskArray=[];
+  for (let i=1; i<arr.length ; i++){
+newTaskArray+=arr[i]+" "  }
+  var newTasks= tasks.concat(newTaskArray)
 }
-}
+
+
+
 
 /**
  * prints "unknown command"
