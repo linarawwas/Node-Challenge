@@ -13,7 +13,7 @@ function startApp(name){
   process.stdin.resume();
   process.stdin.setEncoding('utf8');
   process.stdin.on('data', onDataReceived);
-  console.log(`Welcome to lina's application!`)
+  console.log(`Welcome to ${name}'s application!`)
   console.log("--------------------")
 }
 
@@ -36,9 +36,11 @@ function startApp(name){
 function onDataReceived(text) {
   if (text === 'quit\n') {
     quit();
-  }  else if(text === 'exit\n'){
+  }
+  else if(text === 'exit\n'){
     quit();
-  }  else if(text === 'hello\n'){
+  }
+  else if(text === 'hello\n'){
     hello();
   }
   else{
@@ -80,4 +82,4 @@ function quit(){
 }
 
 // The following line starts the application
-startApp("Jad Sarout")
+startApp("Lina Rawas")
