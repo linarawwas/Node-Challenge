@@ -67,9 +67,6 @@ else if(arr[0]=='add'){
 else if(arr[0]=='remove'){
   remove();
 }
-else if (arr[1]>newTasks.length){
-  console.log('wrong number, nothing to remove')
-}
 else if(arr[0]=='edit'){
 edit();
 }
@@ -93,6 +90,7 @@ newTaskArray=[];
 newTaskArray+=arr[i]+" "  ;
 }
 /* this is the array we will save added tasks to */
+var newTasks=[]
 newTasks= tasks.concat(newTaskArray)
 console.log(newTasks)
 }
@@ -101,21 +99,31 @@ function remove(){
   if (arr[1]=='1'){
   newTasks.shift();
   console.log('first element was removed',newTasks);
-  }else if (arr[1]=='2'){
+  }else if (arr[1]==2){
   newTasks.splice(1,1)
   console.log('2nd element was removed', newTasks)
+  }else if (arr[1] > newTasks.length){
+    console.log('wrong number, nothing to remove')
   }else{
     newTasks.pop()
     console.log('last element was removed', newTasks)
   }
 }
-
-// function removeFirst(){
-// }
-// function removeSecond(){
-// }
-
-
+function edit(){
+  var numbers=[1,2,3,4,5]
+  for(let i=0;i<5;i++){
+    if(arr[1]==numbers[i]){
+      var toAdd=arr.slice(2,arr.length).join(" ")
+      var edited=newTasks.splice(i-1,1,toAdd)
+      console.log(edited)
+    }
+else{
+  var toAdd=arr.slice(1,arr.length).join(" ")
+  var edited= newTasks.splice(i-1,1,toAdd)
+  console.log(edited)
+}
+  }
+}
 
 /**
  * prints "unknown command"
