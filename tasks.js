@@ -70,18 +70,40 @@ else if(arr[0]=='remove'){
 else if(arr[0]=='edit'){
 edit();
 }
+else if(arr[0]=='check'){
+  checkUncheck('check');
+  }
+else if(arr[0]=='uncheck'){
+  checkUncheck('uncheck');
+ }
 else{
   unknownCommand(text);
 }
 }
 /* this is the initial task list */
-var tasks =['read a book','hug your mama and baba','get nephews and nieces chocolate']
+const tasks =['read a book','hug your mama and baba','get nephews and nieces chocolate'];
+var listItem=[];
+for (let i=0; i<tasks.length ; i++){
+    listItem+=" [ ] "+(i+1).toString()+". "+tasks[i];
+}
 
-/* lists the tasks i have in the tasks array */
-function list(){
-  for (let i=0; i<tasks.length ; i++){
-    console.log("[]"+(i+1).toString()+". "+tasks[i])
+function checkUncheck(checkUncheck){
+ for(let i=0;i<listItem.length;i++){
+  if(arr[1]==i){
+    if(checkUncheck=='check'){
+      listItem[i-1].replace("[ ]","[✓]");
+      console.log(listItem)
+
+    }else{
+      listItem[i-1].replace("[✓]","[ ]");
+      console.log(listItem)
+    }
   }
+ } 
+  }
+
+function list(){
+    console.log(listItem);
   }
 
 function add(){ 
