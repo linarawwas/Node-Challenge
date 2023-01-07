@@ -170,7 +170,7 @@ function hello(){
 
 /* lists all possible commands */
 function help(){
-  console.log('these are the commands: exit/quit, hello, hello someone, remove, remove 1, remove 2, help')
+console.log('these are the commands: \nexit/quit to quit the application\nhello or hello x to greet\n remove, remove 1, remove 2 to remove a task\n check and uncheck with the number of task to check it or uncheck it\nhelp for instructions')
 }
 
 /**
