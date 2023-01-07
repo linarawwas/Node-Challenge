@@ -80,7 +80,7 @@ var tasks =['read a book','hug your mama and baba','get nephews and nieces choco
 /* lists the tasks i have in the tasks array */
 function list(){
   for (let i=0; i<tasks.length ; i++){
-    console.log((i+1).toString()+". "+tasks[i])
+    console.log("[]"+(i+1).toString()+". "+tasks[i])
   }
   }
 
