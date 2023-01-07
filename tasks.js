@@ -1,4 +1,27 @@
+const fs = require('fs');
+const fileName = process.argv[2] ? process.argv[2] : 'database.json';
 
+try {
+  if (!fs.existsSync(fileName)) {
+    fs.writeFile(fileName, '[{"done":false, "task":"DEMO"}]', (err) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      console.log('file created.');
+    });
+  }
+} catch (error) {
+  console.log('error: ', error);
+}
+let Everything;
+fs.readFile(fileName, 'utf-8', (err, data) => {
+  if (err) {
+    console.log('error: ', err);
+    return;
+  }
+  Everything = JSON.parse(data);
+});
 /**
  * Starts the application
  * This is the function that is run when the app starts
