@@ -40,6 +40,7 @@ function startApp(name){
   console.log("--------------------")
 }
 
+// comment for pull request
 
 /**
  * Decides what to do depending on the data that was received
